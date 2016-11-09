@@ -1,0 +1,34 @@
+/*LBT Planner Style CSS*/
+
+div.canvas-container {
+  box-sizing: border-box;
+  width: 847px;
+  height: 595px;
+  float:left;
+}
+canvas{
+  border: solid 3px #000;
+}
+
+#control{
+  box-sizing: border-box;
+  float:left;
+  width: 212px;
+  height: 595px;
+  /*border: solid 3px #000;*/
+}
+.toutai{
+  float:left;
+  height: 100px;
+  width: 100px;
+  border: solid 3px #000;
+  text-align: center;
+  background-color: rgb(106, 138, 78);
+}
+.toutai:hover{
+  background-color: rgb(99, 10, 252);
+}
+
+.canvas-area{
+  float:left;
+}

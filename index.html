@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <title>LBT Planner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link href="./resource/style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+  <div id="control">
+    <div id="light-parts">
+      <div id="cursor" class="toutai" onclick="activeToutai='cursor'";>カーソル</div>
+      <div id="totu" class="toutai" onclick="activeToutai='totu'">凸 1000w</div>
+      <div id="totu500" class="toutai" onclick="activeToutai='totu500'">凸 500w</div>
+      <div id="fure" class="toutai" onclick="activeToutai='fure'">フレネル 1000W</div>
+      <div id="fure500" class="toutai">フレネル 500w</div>
+      <div id="par" class="toutai">パー</div>
+      <div id="moving" class="toutai">ムービング</div>
+      <div id="strobo" class="toutai">ストロボ</div>
+      <div id="source" class="toutai">ソース４</div>
+      <div id=""></div>
+    </div>
+  </div>
+  <canvas id="main" class="canvas-area" width="847" height="595"></canvas>
+<!-- SCRIPTS -->
+<script src="./resource/fabric.js"></script>
+<script src="./resource/main.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</body>
+</html>
