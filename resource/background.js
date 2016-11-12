@@ -37,7 +37,6 @@
         left:70
     });
 })();
-drowBackground('lisa');
 
 
 
