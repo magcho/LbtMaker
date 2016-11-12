@@ -2,47 +2,53 @@
     バトンを描画するための定義ファイル
 */
 (function (){
+/*
+    var hoge = new fabric.Line([x1,y1,x2,y2],{
+        stroke: 線の色,
+        strokeWidth: 線の太さ
+    })
+
+847
+30 787 30
+
+*/
+
+
+
     // LiSA視聴覚
-    var sus1 = new fabric.Line({
-        x1:100,
-        y1:500,
-        x2:800,
-        y2:500,
-        bordercolor:rgba(0,0,0,1)
+    var sus1 = new fabric.Line([30,200,720,200],{
+        stroke:'black',
+        strokeWidth:3
     });
-    var sus2 = new fabric.Line({
-        x1:100,
-        y1:400,
-        x2:800,
-        y2:400,
-        bordercolor:rgba(0,0,0,1)
+    var sus2 = new fabric.Line([30,300,720,300],{
+        stroke:'black',
+        strokeWidth:3
     });
-    var sus3 = new fabric.Line({
-        x1:100,
-        y1:300,
-        x2:800,
-        y2:300,
-        bordercolor:rgba(0,0,0,1)
+    var sus3 = new fabric.Line([30,400,720,400],{
+        stroke:'black',
+        strokeWidth:3
     });
-    var cl = new fabric.Line({
-        x1:100,
-        y1:200,
-        x2:800,
-        y2:200,
-        bordercolor:rgba(0,0,0,1)
+    var cl = new fabric.Line([30,550,720,550],{
+        stroke:'black',
+        strokeWidth:3
     });
     LiSAHall = new fabric.Group([sus1,sus2,sus3,cl],{
-        left:0,
-        top:0
+        top:100,
+        left:70
     });
-
-
 })();
+drowBackground('lisa');
+
+
+
+canvas.on('mouse:down',function(options){
+    canvas.sendBackwards(LiSAHall,true);    //背景のサスの描画を最背景に移動
+});
 
 function drowBackground(type){
     switch (type) {
         case 'lisa':
-            console.info(LiSAHall);
+            console.log('drow background type='+type);
             canvas.add(LiSAHall);
             break;
         default:

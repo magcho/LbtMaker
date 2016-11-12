@@ -131,13 +131,14 @@ function CloneToutai(posX,posY,type){
 // マウスカーソルに追従させる
 
 CloneToutai(0,0,'fure');
-fure[0].set({
+fure[nowToutaiCount.fure-1].set({
     opacity:0,
 });
 CloneToutai(0,0,'totu');
-totu[0].set({
+totu[nowToutaiCount.totu-1].set({
     opacity:0,
 });
+canvas.renderAll();
 
 canvas.on('mouse:move', function(options) {
     var posX = options.e.layerX;
@@ -185,13 +186,13 @@ function activeToutaiChange(toType){
         case 'fure':
             console.info(nowToutaiCount.fure-1);
             fure[nowToutaiCount.fure].set({
-                opacity:0.5  //非アクティブ時は透明にする。
+                opacity:0  //非アクティブ時は透明にする。
             });
             break;
 
         case 'totu':
             totu[nowToutaiCount.totu].set({
-                opacity:0.5  //非アクティブ時は透明にする。
+                opacity:0  //非アクティブ時は透明にする。
             });
             break;
 
