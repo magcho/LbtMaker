@@ -28,10 +28,24 @@
     </div>
   </div>
   <canvas id="main" class="canvas-area" width="847" height="595"></canvas>
+
+
+  <!-- ポップアップメニュー -->
+  <div class="background-popup">  <!-- 背景のサステンプレート選択 -->
+    <div class="background-close-botton" onclick="$('.background-popup').css('display','none')">×</div>
+    <div class="background-bottom" onclick="drowBackground('lisa')">LiSA  視聴覚</div>
+    <div class="background-bottom">LiSA  体育館</div>
+  </div>
+
+
 <!-- SCRIPTS -->
 <script src="./resource/fabric.js"></script>
 <script src="./resource/main.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+<script src="./resource/background.js"></script>
+<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+// サイドメニューの表示関連のスクリプト
+</script>
 </body>
 </html>
