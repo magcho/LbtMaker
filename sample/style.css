@@ -1,0 +1,9 @@
+#title { overflow: hidden; position: relative; }
+
+#tool {
+    margin: 10px 10px 10px;
+}
+
+#canvas {
+    border: 1px solid black;
+}
