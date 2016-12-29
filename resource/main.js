@@ -25,12 +25,12 @@ var activeToutai = 'cursor';
 // 灯体の種類
 //      凸1000w         totu
 //      フレネル1000w    fure
-//      パー            par
+//      パー             par
 
 // ###################################
 // クリックイベント時に当体を追加する関数
 function CloneToutai(posX,posY,type){
-
+    canvas.isDrawingMode = false;
     /*
         posX,posY    [整数値] 追加する座標
         type         [文字列] 当体の種類 {fure,totu,par}
@@ -78,13 +78,13 @@ function CloneToutai(posX,posY,type){
         case 'totu':
             (function(){
                 var circle = new fabric.Circle({
-                    radius:20,
+                    radius:8,
                     left:0,
                     top:0,
                     fill: 'black'
                 });
                 var circle2 = new fabric.Circle({
-                    radius:18,
+                    radius:6,
                     left:2,
                     top:2,
                     fill: 'white'
@@ -206,3 +206,10 @@ function activeToutaiChange(toType){
     }
 
 }
+
+fabric.Image.fromURL('plan-base.png', function(oImg) {
+  oImg.scale(0.2);
+  canvas.add(oImg);
+});
+
+canvas.renderAll();

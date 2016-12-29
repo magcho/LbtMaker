@@ -40,9 +40,9 @@
 
 
 
-canvas.on('mouse:down',function(options){
-    canvas.sendBackwards(LiSAHall,true);    //背景のサスの描画を最背景に移動
-});
+// canvas.on('mouse:down',function(options){
+//     canvas.sendBackwards(LiSAHall,true);    //背景のサスの描画を最背景に移動
+// });
 
 function drowBackground(type){
     switch (type) {
