@@ -13,20 +13,69 @@
 
 </head>
 <body>
+  <div>
+    <div class="header-bar">
+      <div class="h-logo">
+        <img src="./resource/logo.jpg" class="h-logo-img"/>
+      </div>
+      <div class="h-file h-botton">
+        Files
+      </div>
+      <div class="h-settings h-botton">
+        Settings
+      </div>
+      <div class="h-zoom-pull">
+        <form>
+          <select class="h-zoom-pull-value">
+            <option value="10">10%</option>
+            <option value="20">20%</option>
+            <option value="30">30%</option>
+            <option value="40">40%</option>
+            <option value="50">50%</option>
+            <option value="60">60%</option>
+            <option value="70">70%</option>
+            <option value="80">80%</option>
+            <option value="90">90%</option>
+            <option value="100" selected>100%</option>
+            <option value="110">110%</option>
+            <option value="120">120%</option>
+            <option value="130">130%</option>
+            <option value="140">140%</option>
+            <option value="150">150%</option>
+            <option value="160">160%</option>
+            <option value="170">170%</option>
+            <option value="180">180%</option>
+            <option value="190">190%</option>
+          </select>
+        </form>
+      </div>
+      <div class="h-zoom">
+        <div class="h-zoom-blank">
+          zoom
+        </div>
+        <div class="h-zoom-p">
+          +
+        </div>
+        <div class="h-zoom-m">
+          -
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="side-contents">
     <div id="menu">
-      <div class="setting-menu menu-botton" onclick="$('#settings').css('display','block');$('#control').css('display','none')">Settings</div>
-      <div class="ligting-menu menu-botton" onclick="$('#control').css('display','block');$('#settings').css('display','none')">Lighting</div>
+      <div class="setting-menu menu-botton" >Settings</div>
+      <div class="ligting-menu menu-botton" >Lighting</div>
     </div>
     <div id="settings">
-      <div id="background-image-set" class="settings-botton" onclick="$('.background-popup').css('display','block')">背景バトンセット</div>
+      <div id="background-image-set" class="settings-botton" >背景バトンセット</div>
     </div>
     <div id="control">
       <div id="light-parts">
-        <div id="cursor" class="toutai" onclick="activeToutaiChange('cursor')">カーソル</div>
-        <div id="totu" class="toutai" onclick="activeToutaiChange('totu')">凸 1000w</div>
-        <div id="totu500" class="toutai" onclick="activeToutaiChange('totu500')">凸 500w</div>
-        <div id="fure" class="toutai" onclick="activeToutaiChange('fure')">フレネル 1000W</div>
+        <div id="cursor" class="toutai" >カーソル</div>
+        <div id="totu" class="toutai" >凸 1000w</div>
+        <div id="totu500" class="toutai" >凸 500w</div>
+        <div id="fure" class="toutai" >フレネル 1000W</div>
         <div id="fure500" class="toutai">フレネル 500w</div>
         <div id="par" class="toutai">パー</div>
         <div id="moving" class="toutai">ムービング</div>
@@ -40,8 +89,8 @@
 
   <!-- ポップアップメニュー -->
   <div class="background-popup">  <!-- 背景のサステンプレート選択 -->
-    <div class="background-close-botton" onclick="$('.background-popup').css('display','none')">×</div>
-    <div class="background-bottom" onclick="drowBackground('lisa')">LiSA  視聴覚</div>
+    <div class="background-close-botton" >×</div>
+    <div class="background-bottom" >LiSA  視聴覚</div>
     <div class="background-bottom">LiSA  体育館</div>
   </div>
 
