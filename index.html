@@ -10,19 +10,27 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   <link href="./resource/style.css" rel="stylesheet" type="text/css">
+  <!-- iconfont -->
+  <link rel="stylesheet" href="./resource/font/font-awesome-4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
-  <div>
+  <!-- ヘッダーメニュー -->
     <div class="header-bar">
       <div class="h-logo">
         <img src="./resource/logo.jpg" class="h-logo-img"/>
       </div>
       <div class="h-file h-botton">
-        Files
+        <i class="fa fa-file fa-2x"></i>
+        <div class="h-file-text">
+          Files
+        </div>
       </div>
       <div class="h-settings h-botton">
-        Settings
+        <i class="fa fa-cog h-setting-icon fa-2x"></i>
+        <div class="h-setting-text">
+          Settings
+        </div>
       </div>
       <div class="h-zoom-pull">
         <form>
@@ -54,37 +62,79 @@
           zoom
         </div>
         <div class="h-zoom-p">
-          +
+          <i class="fa fa-search-plus fa-2x"></i>
         </div>
         <div class="h-zoom-m">
-          -
+          <i class="fa fa-search-minus fa-2x"></i>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="side-contents">
-    <div id="menu">
-      <div class="setting-menu menu-botton" >Settings</div>
-      <div class="ligting-menu menu-botton" >Lighting</div>
-    </div>
-    <div id="settings">
-      <div id="background-image-set" class="settings-botton" >背景バトンセット</div>
-    </div>
-    <div id="control">
-      <div id="light-parts">
-        <div id="cursor" class="toutai" >カーソル</div>
-        <div id="totu" class="toutai" >凸 1000w</div>
-        <div id="totu500" class="toutai" >凸 500w</div>
-        <div id="fure" class="toutai" >フレネル 1000W</div>
-        <div id="fure500" class="toutai">フレネル 500w</div>
-        <div id="par" class="toutai">パー</div>
-        <div id="moving" class="toutai">ムービング</div>
-        <div id="strobo" class="toutai">ストロボ</div>
-        <div id="source" class="toutai">ソース４</div>
+      <div class="h-delete-objects">
+        <i class="fa fa-trash-o fa-2x"></i>
       </div>
     </div>
+
+
+  <!-- サイドメニュー -->
+  <div class="side-contents">
+    <div class="s-light-parts-title">
+      <i class="s-light-parts-title-icon fa fa-caret-down fa-lg"></i>
+      <div class="s-light-parts-title-text">
+        灯体
+      </div>
+    </div>
+    <div class="s-light-parts-contents">
+      <div class="totu toutai" >凸 1000w</div>
+      <div class="totu500 toutai" >凸 500w</div>
+      <div class="fure toutai" >フレネル 1000W</div>
+      <div class="fure500 toutai">フレネル 500w</div>
+      <div class="par toutai">パー</div>
+      <div class="moving toutai">ムービング</div>
+      <div class="strobo toutai">ストロボ</div>
+      <div class="source toutai">ソース４</div>
+    </div>
   </div>
+
+  <!-- メインフィールド -->
   <canvas id="main" class="canvas-area" width="847" height="595"></canvas>
+  <img src="./resource/img/plan-origin.png" id="my-image" class="preLoad-img">
+
+
+  <!-- 右クリックメニュー -->
+  <table class="right-click-menu">
+    <tr class="rc-copy rc-menu">
+      <td class="icon">
+        <i class="fa fa-copy fa-lg rc-icon"></i>
+      </td>
+      <td class="text-l">
+        コピー
+      </td>
+      <td class="text-r">
+        Ctrl+C
+      </td>
+    </tr>
+    <tr class="rc-paste rc-menu">
+      <td class="icon">
+        <i class="fa fa-paste fa-lg rc-icon"></i>
+      </td>
+      <td class="text-l">
+        ペースト
+      </td>
+      <td class="text-r">
+        Ctrl+V
+      </td>
+    </tr>
+    <tr class="rc-delete rc-menu">
+      <td class="icon">
+        <i class="fa fa-trash-o fa-lg rc-icon"></i>
+      </td>
+      <td class="text-l">
+        削除
+      </td>
+      <td class="text-r">
+        Delete
+      </td>
+    </tr>
+  </table>
 
 
   <!-- ポップアップメニュー -->

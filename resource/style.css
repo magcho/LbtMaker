@@ -1,75 +1,5 @@
 /*LBT Planner Style CSS*/
 
-div.canvas-container {
-  box-sizing: border-box;
-  width: 847px;
-  height: 595px;
-  float:left;
-}
-canvas{
-  border: solid 3px #000;
-}
-
-#control{
-  box-sizing: border-box;
-  float:left;
-  width: 212px;
-  height: 595px;
-  /*border: solid 3px #000;*/
-}
-.toutai{
-  box-sizing: border-box;
-  float:left;
-  height: 100px;
-  width: 100px;
-  border: solid 3px #000;
-  text-align: center;
-  background-color: rgb(106, 138, 78);
-}
-.toutai:hover{
-  background-color: rgb(99, 10, 252);
-}
-
-.canvas-area{
-  float:left;
-}
-
-#settings{
-  box-sizing: border-box;
-  /*float:left;*/
-  width: 212px;
-  height: 595px;
-}
-
-#menu{
-  box-sizing: border-box;
-  /*float:left;*/
-  width: 212px;
-  height: 56px;
-}
-.menu-botton{
-  float:left;
-  width: 100px;
-  height: 50px;
-  border: solid 3px #000;
-  text-align: center;
-  background-color: rgb(46, 193, 94);
-}
-.menu-botton:hover{
-  background-color: rgb(17, 73, 29);
-}
-.side-contents{
-  float: left;
-}
-.settings-botton{
-  float:left;
-  width: 100px;
-  height:100px;
-  border: solid 3px #000;
-  text-align: center;
-  background-color: rgb(46, 144, 193);
-}
-
 /*ヘッダーバー関連*/
 .header-bar{
   height: 60px;
@@ -95,6 +25,9 @@ canvas{
   display: block;
   float: left;
 }
+i.h-setting-icon{
+  size:10px;
+}
 .h-zoom-pull-value{
   display: block;
   float: left;
@@ -103,12 +36,14 @@ canvas{
 .h-zoom{
   box-sizing: border-box;
   height: 60px;
-  width: 100px;
+  width: 60px;
   float: left;
 }
 .h-zoom-blank{
   box-sizing: border-box;
   height: 30px;
+  width: 60px;
+  float: left;
 }
 .h-zoom-p,.h-zoom-m{
   box-sizing: border-box;
@@ -117,8 +52,109 @@ canvas{
   float: left;
   text-align: center;
   border: solid 2px #000;
+  float: left;
 }
-/*ポップアップ関連*/
+.h-delete-objects{
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  float: left;
+  border: solid 1px #000;
+}
+
+/* サイドメニュー関連 */
+.side-contents{
+  padding-top: 15px;
+  float: left;
+  box-sizing: border-box;
+  width: 200px;
+}
+.s-light-parts-title{
+  box-sizing: border-box;
+  height: 30px;
+  width: 200px;
+  background-color: #e8e8e8;
+  border-top: #e5e5e5 solid 1px;
+  border-bottom: #e5e5e5 solid 1px;
+  padding-left: 5px;
+}
+.s-light-parts-title-icon{
+  float: left;
+  padding-left: 5px;
+}
+.s-light-parts-title-text{
+  float: left;
+  padding-left: 10px;
+}
+.s-light-parts-title:hover{
+  background-color: #c5c5c5;
+}
+.s-light-parts-contents{
+  width: 200px;
+  height: 300px;
+  box-sizing: border-box;
+  padding: 4px;
+  background-color: #e5e5e5;
+}
+.toutai{
+  box-sizing: border-box;
+  float:left;
+  height: 64px;
+  width: 64px;
+  text-align: center;
+  background-color: #e5e5e5;
+  border: solid 1px #e5e5e5;
+  border-radius: 3px;
+}
+.toutai:hover{
+  background-color: #c5c5c5;
+  border: solid #000 1px;
+}
+/* メインフィールド */
+.canvas-area{
+  float:left;
+}
+div.canvas-container {
+  box-sizing: border-box;
+  width: 847px;
+  height: 595px;
+  float:left;
+}
+canvas{
+  border: solid 3px #000;
+}
+canvas.lower-canvas{
+  background:rgb(182, 182, 182);
+}
+
+/* 右クリックメニュー */
+.right-click-menu{
+  display: none;
+
+  position: fixed;
+  background: #fff;
+}
+.right-click-menu td{
+  border: 0px  solid;
+  margin: 0px;
+}
+.rc-menu{
+  width: 240px;
+  height: 30px;
+  background: #FFF;
+  margin-left: 8px;
+}
+.icon{
+  width: 20px;
+}
+.text-l{
+  width: 80px;
+  padding-left: 8px;
+}
+tr > td:hover{
+  background-color: #e5e5e5;
+}
+/* ポップアップ関連 */
 .background-popup{
   position: absolute;
   top: 50px;
@@ -130,21 +166,16 @@ canvas{
   display: none;
   opacity: 1;
 }
-
 .background-bottom{
   box-sizing: border-box;
   display: block;
   float:left;
   width:350px;
   height:100px;
-
   margin:30px 25px;
-
   border: solid 3px #000;
-  text-align: center;
   background-color: rgb(106, 46, 193);
 }
-
 .background-close-botton{
   display: block;
   float: left;
@@ -153,4 +184,9 @@ canvas{
   width: 50px;
   text-align: center;
   font-size:5em;
+}
+
+/* プリロード画像 */
+.preLoad-img{
+  display: none;
 }
