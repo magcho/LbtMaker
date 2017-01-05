@@ -64,9 +64,8 @@ i.h-setting-icon{
 
 /* サイドメニュー関連 */
 .side-contents{
-  padding-top: 15px;
-  float: left;
   box-sizing: border-box;
+  float: left;
   width: 200px;
 }
 .s-light-parts-title{
@@ -76,6 +75,7 @@ i.h-setting-icon{
   background-color: #e8e8e8;
   border-top: #e5e5e5 solid 1px;
   border-bottom: #e5e5e5 solid 1px;
+  margin-top: 15px;
   padding-left: 5px;
 }
 .s-light-parts-title-icon{
@@ -110,6 +110,39 @@ i.h-setting-icon{
   background-color: #c5c5c5;
   border: solid #000 1px;
 }
+  /* 灯体 */
+  .totu{
+    background-image: url("./img/totu.png");
+    background-size: contain;
+  }
+  .totu500{
+    background-image: url("./img/totu500.png");
+    background-size: contain;
+  }
+  .fure{
+    background-image: url("./img/fure.png");
+    background-size: contain;
+  }
+  .fure500{
+    background-image: url("./img/fure500.png");
+    background-size: contain;
+  }
+  .par{
+    background-image: url("./img/par.png");
+    background-size: contain;
+  }
+  .moving{
+    background-image: url("./img/moving.png");
+    background-size: contain;
+  }
+  .strobo{
+    background-image: url("./img/strobo.png");
+    background-size: contain;
+  }
+  .source4{
+    background-image: url("./img/source4.png");
+    background-size: contain;
+  }
 /* メインフィールド */
 .canvas-area{
   float:left;
