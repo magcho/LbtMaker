@@ -1,4 +1,5 @@
 window.onload = function() {
+  listener = new window.keypress.Listener(); //keypressの読み込み
   nowState = 'cursor';
   /*
   nowState: cursor    カーソルモード（デフォルト)
