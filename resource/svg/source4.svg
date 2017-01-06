@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="16"
+   height="30"
+   viewBox="0 0 16 0"
+   id="svg4159"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="source4.svg"
+   inkscape:export-filename="/Users/magcho/Documents/git/LbtMaker/resource/img/source4.png"
+   inkscape:export-xdpi="843.75"
+   inkscape:export-ydpi="843.75">
+  <defs
+     id="defs4161" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="16"
+     inkscape:cx="-1.2688334"
+     inkscape:cy="14.709624"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="851"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     units="px" />
+  <metadata
+     id="metadata4164">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="レイヤー 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1122.3622)">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.09439213;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4953"
+       width="6.4491076"
+       height="9.4491081"
+       x="4.7754459"
+       y="1135.9453" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.09064709;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 5.8359159,1127.881 4.2653531,0 1,8.0778 -6.2028531,0.062 z"
+       id="rect4955"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.20738506;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4957"
+       width="13.855115"
+       height="1.398615"
+       x="1.0724425"
+       y="1135.9395" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.106;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4961"
+       width="2.4375"
+       height="1.25"
+       x="6.78125"
+       y="1126.5762" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.12739754;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4966"
+       width="3.8101025"
+       height="1.9351025"
+       x="6.0949488"
+       y="1145.7024" />
+  </g>
+</svg>

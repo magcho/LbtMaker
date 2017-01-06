@@ -142,6 +142,8 @@ i.h-setting-icon{
   .source4{
     background-image: url("./img/source4.png");
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 /* メインフィールド */
 .canvas-area{
