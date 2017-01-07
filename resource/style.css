@@ -2,7 +2,7 @@
 
 /*ヘッダーバー関連*/
 .header-bar{
-  height: 60px;
+  height: 100px;
   width: 100%
 }
 .h-logo{
@@ -13,13 +13,46 @@
   border: solid 2px #000;
   float: left;
 }
+/* メニューバー */
+.h-menu-bar{
+  float: left;
+}
+.hm-botton{
+  box-sizing: border-box;
+  height: 30px;
+  padding: 3px;
+  width: auto;
+  border: solid 1px #000;
+}
+/* ドロップダウンメニュー */
+.drop-menu{
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  background: #c5c5c5;
+  border:solid 1px #000;
+  display: none;
+}
+ /* file メニュー */
+ .d-file-menu{
+ position: relative; /*親要素からの相対座標*/
+ top: auto;
+ }
+
+ /* コントロールバー */
+.h-control-bar{
+  box-sizing: border-box;
+  height: auto;
+  width: auto;
+  float: inherit;
+}
 .h-logo-img{
   width: 100%;
   height: 100%;
 }
 .h-botton{
   box-sizing: border-box;
-  height: 60px;
+  height: 30px;
   width: 60px;
   border: solid 2px #000;
   display: block;
@@ -39,12 +72,6 @@ i.h-setting-icon{
   width: 60px;
   float: left;
 }
-.h-zoom-blank{
-  box-sizing: border-box;
-  height: 30px;
-  width: 60px;
-  float: left;
-}
 .h-zoom-p,.h-zoom-m{
   box-sizing: border-box;
   height: 30px;
@@ -55,9 +82,6 @@ i.h-setting-icon{
   float: left;
 }
 .h-delete-objects{
-  box-sizing: border-box;
-  width: 60px;
-  height: 60px;
   float: left;
   border: solid 1px #000;
 }
@@ -91,7 +115,7 @@ i.h-setting-icon{
 }
 .s-light-parts-contents{
   width: 200px;
-  height: 300px;
+  height: 210px;
   box-sizing: border-box;
   padding: 4px;
   background-color: #e5e5e5;
@@ -189,38 +213,6 @@ canvas.lower-canvas{
 tr > td:hover{
   background-color: #e5e5e5;
 }
-/* ポップアップ関連 */
-.background-popup{
-  position: absolute;
-  top: 50px;
-  left: 300px;
-
-  height: 500px;
-  width: 800px;
-  background-color: rgb(209, 128, 9);
-  display: none;
-  opacity: 1;
-}
-.background-bottom{
-  box-sizing: border-box;
-  display: block;
-  float:left;
-  width:350px;
-  height:100px;
-  margin:30px 25px;
-  border: solid 3px #000;
-  background-color: rgb(106, 46, 193);
-}
-.background-close-botton{
-  display: block;
-  float: left;
-  padding-left: 720px;
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  font-size:5em;
-}
-
 /* プリロード画像 */
 .preLoad-img{
   display: none;

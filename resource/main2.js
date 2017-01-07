@@ -10,16 +10,24 @@ window.onload = function() {
 
   */
   ctrlState = false;
-  $(window).keydown(function(e) {
-    if (e.keyCode == 17 || e.keyCode == 91) {
-      ctrlState = true; //Ctrlキー 17,commandキー91
+  // https://dmauro.github.io/Keypress/
+  var my_combos = listener.register_many([
+    {
+      "keys": "meta",
+      "on_keydown": function() {
+        ctrlState = true;
+      },
+      "on_keyup": function() {
+        ctrlState = false;
+      },
+    },
+    {
+      "keys": "shift",
+      "on_keydown": function(){
+
+      }
     }
-  });
-  $(window).keyup(function(e) {
-    if (e.keyCode == 17 || e.keyCode == 91) {
-      ctrlState = false; //Ctrlキー 17,commandキー91
-    }
-  });
+  ]);
   /*
     ctrlState  trueは押下、falseは押してない
   */
@@ -67,7 +75,8 @@ function startProgram() {
   $(document).on(mousewheelevent, function(e) {
     if (ctrlState) {
       var delta = e.originalEvent.deltaY ? -(e.originalEvent.deltaY) : e.originalEvent.wheelDelta ? e.originalEvent.wheelDelta : -(e.originalEvent.detail);
-        var mouse_pos = canvas.getPointer(e.e); //マウス座標を基準にズームインしたかった、けど工夫が必要(issueに詳細)
+        var mouse_pos = canvas.getPointer(e.e,true); //マウス座標を基準にズームインしたかった、けど工夫が必要(issue #5)
+        console.log(mouse_pos);
       if (delta < 0) {
         e.preventDefault();
         canvas.zoomToPoint(new fabric.Point(mouse_pos.x, mouse_pos.y), canvas.getZoom() * 1.1)
