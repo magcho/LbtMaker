@@ -63,10 +63,10 @@ window.onload = function() {
 function startProgram() {
   /* ズーム関連 */
   // ズームボタン
-  $('.h-zoom-p').click(function() {
+  $('.h-zoom-p').on("click",function() {
     canvas.setZoom(canvas.getZoom() * 1.1);
   });
-  $('.h-zoom-m').click(function() {
+  $('.h-zoom-m').on("click",function() {
     canvas.setZoom(canvas.getZoom() / 1.1);
   });
   // ホイールイベント
@@ -105,7 +105,7 @@ function startProgram() {
 
 
   // 凸1000wの描画
-  $('.totu').click(function() {
+  $('.totu').on("click",function() {
     //http://www.independent-software.com/loading-an-svg-image-with-fabric-js/
     canvas.observe('mouse:down', function(e) {
       var mouse_pos = canvas.getPointer(e.e);
@@ -119,31 +119,8 @@ function startProgram() {
       });
     });
   });
-  // $(".totu").click(function() {
-  //   canvas.isDrawingMode = false;
-  //   canvas.observe('mouse:down', function(e) {
-  //     var mouse_pos = canvas.getPointer(e.e);
-  //     var circle1 = new fabric.Circle({
-  //       radius: 8,
-  //       left: 0,
-  //       top: 0,
-  //       fill: 'black'
-  //     });
-  //     var circle2 = new fabric.Circle({
-  //       radius: 6,
-  //       left: 2,
-  //       top: 2,
-  //       fill: 'white'
-  //     });
-  //     canvas.add(new fabric.Group([circle1, circle2], {
-  //       left: mouse_pos.x,
-  //       top: mouse_pos.y
-  //     }));
-  //     console.log(mouse_pos);
-  //     canvas.off('mouse:down'); // イベントを解除
-  //   });
-  // });
-  $('.fure').click(function() {
+
+  $('.fure').on("click",function() {
     //http://www.independent-software.com/loading-an-svg-image-with-fabric-js/
     canvas.observe('mouse:down', function(e) {
       var mouse_pos = canvas.getPointer(e.e);
@@ -157,7 +134,7 @@ function startProgram() {
       });
     });
   });
-  $('.fure500').click(function() {
+  $('.fure500').on("click",function() {
     //http://www.independent-software.com/loading-an-svg-image-with-fabric-js/
     canvas.observe('mouse:down', function(e) {
       var mouse_pos = canvas.getPointer(e.e);
@@ -171,7 +148,7 @@ function startProgram() {
       });
     });
   });
-  $('.totu500').click(function() {
+  $('.totu500').on("click",function() {
     //http://www.independent-software.com/loading-an-svg-image-with-fabric-js/
     canvas.observe('mouse:down', function(e) {
       var mouse_pos = canvas.getPointer(e.e);
@@ -185,7 +162,7 @@ function startProgram() {
       });
     });
   });
-  $('.moving').click(function() {
+  $('.moving').on("click",function() {
     //http://www.independent-software.com/loading-an-svg-image-with-fabric-js/
     canvas.observe('mouse:down', function(e) {
       var mouse_pos = canvas.getPointer(e.e);
@@ -199,7 +176,7 @@ function startProgram() {
       });
     });
   });
-  $('.strobo').click(function() {
+  $('.strobo').on("click",function() {
     //http://www.independent-software.com/loading-an-svg-image-with-fabric-js/
     canvas.observe('mouse:down', function(e) {
       var mouse_pos = canvas.getPointer(e.e);
@@ -213,7 +190,7 @@ function startProgram() {
       });
     });
   });
-  $('.source4').click(function() {
+  $('.source4').on("click",function() {
     //http://www.independent-software.com/loading-an-svg-image-with-fabric-js/
     canvas.observe('mouse:down', function(e) {
       var mouse_pos = canvas.getPointer(e.e);
@@ -245,7 +222,7 @@ function startProgram() {
       });
     }
   };
-  $('.h-delete-objects').click(function() {
+  $('.h-delete-objects').on("click",function() {
     deleteObjects();
   });
 
@@ -276,7 +253,7 @@ function startProgram() {
     }
   }
   //コピー
-  $('.rc-copy').click(function() {
+  $('.rc-copy').on("click",function() {
     // http://stackoverflow.com/questions/37192881/fabricjs-clipboard-implementation-copy-paste
     // Single Object
     if (canvas.getActiveObject()) {
@@ -299,7 +276,7 @@ function startProgram() {
     displayRightMenu('hide');
   });
   //ペースト
-  $('.rc-paste').click(function(e) {
+  $('.rc-paste').on("click",function(e) {
     // http://stackoverflow.com/questions/37192881/fabricjs-clipboard-implementation-copy-paste
     // Do we have an object in our clipboard?
     if (clipboard) {
@@ -338,13 +315,37 @@ function startProgram() {
     displayRightMenu('hide');
   });
   //削除
-  $('.rc-delete').click(function() {
+  $('.rc-delete').on("click",function() {
     deleteObjects();
     displayRightMenu('hide');
   });
   //グループ化
-  $('.rc-group').click(function() {
+  $('.rc-group').on("click",function() {
     displayRightMenu('hide');
   });
 
+
+
+ /* メニューバー */
+ $('.drop-menu').hover('',function(){  //http://semooh.jp/jquery/api/events/hover/over,+out/
+   $('.drop-menu').css('display','none');
+ });
+ $('.drop-menu').on('click',function(){
+   $('.drop-menu').css('display','none');
+ });
+
+  //file
+  $('.hm-file').hover(function(){
+    $('.drop-menu').css('display','none');
+    $('.d-file-menu').css('display','block');
+  });
+  $('.hm-edit').hover(function(){
+    $('.drop-menu').css('display','none');
+  });
+
+  $('.d-to-img').on('click',function(){
+    var toURI = canvas.toDataURL({
+      format: 'png',
+    });
+  });
 }; //startProgramの閉じ

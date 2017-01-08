@@ -1,21 +1,31 @@
 /*LBT Planner Style CSS*/
 
+body{
+  z-index: 0;
+  margin: 0px;
+}
 /*ヘッダーバー関連*/
 .header-bar{
-  height: 100px;
-  width: 100%
+  height: 60px;
+  width: 100%;
 }
 .h-logo{
   box-sizing: border-box;
   height: 60px;
   width: 60px;
   margin-right: 60px;
-  border: solid 2px #000;
   float: left;
+}
+.h-menu-bar-flame{
+  box-sizing: border-box;
+  float: left;
+  width: auto;
+  height: 60px;
 }
 /* メニューバー */
 .h-menu-bar{
-  float: left;
+  box-sizing: border-box;
+  height: 30px;
 }
 .hm-botton{
   box-sizing: border-box;
@@ -23,28 +33,50 @@
   padding: 3px;
   width: auto;
   border: solid 1px #000;
+  float: left;
 }
-/* ドロップダウンメニュー */
+/* ドロップメニュー */
 .drop-menu{
   box-sizing: border-box;
-  width: auto;
+  position: fixed;
+  z-index: 2;
+  top:30px;
+  left:120px;
   height: auto;
-  background: #c5c5c5;
+  width: 240px;
+  background: #FFF;
   border:solid 1px #000;
   display: none;
 }
+.drop-menu > .line:hover{
+  background: #c5c5c5;
+}
+.drop-menu > .line{
+  box-sizing: border-box;
+  z-index: 2;
+  height: 33px;
+}
+.drop-menu .text-l{
+  box-sizing: border-box;
+  z-index: 2;
+  float: left;
+  line-height: 33px;  /*http://bashalog.c-brains.jp/11/10/13-200523.php*/
+  margin-left: 5px;
+}
+.drop-menu .text-r{
+  box-sizing: border-box;
+  z-index: 2;
+  float: right;
+  text-align: right;
+  line-height: 33px;
+  margin-right: 5px;
+}
  /* file メニュー */
- .d-file-menu{
- position: relative; /*親要素からの相対座標*/
- top: auto;
- }
 
  /* コントロールバー */
 .h-control-bar{
   box-sizing: border-box;
-  height: auto;
-  width: auto;
-  float: inherit;
+  height: 30px;
 }
 .h-logo-img{
   width: 100%;
@@ -53,18 +85,24 @@
 .h-botton{
   box-sizing: border-box;
   height: 30px;
-  width: 60px;
-  border: solid 2px #000;
+  width: auto;
+  border: solid 1px #000;
   display: block;
   float: left;
+}
+.h-text{
+  box-sizing: border-box;
+  float: left;
+  height: auto;
+  width: auto;
+
 }
 i.h-setting-icon{
   size:10px;
 }
-.h-zoom-pull-value{
+.h-zoom-pull{
   display: block;
   float: left;
-  margin-top:20px;
 }
 .h-zoom{
   box-sizing: border-box;
@@ -78,7 +116,7 @@ i.h-setting-icon{
   width: 30px;
   float: left;
   text-align: center;
-  border: solid 2px #000;
+  border: solid 1px #000;
   float: left;
 }
 .h-delete-objects{
@@ -193,7 +231,7 @@ canvas.lower-canvas{
   position: fixed;
   background: #fff;
 }
-.right-click-menu td{
+.right-click-menu > td{
   border: 0px  solid;
   margin: 0px;
 }
@@ -203,10 +241,10 @@ canvas.lower-canvas{
   background: #FFF;
   margin-left: 8px;
 }
-.icon{
+.rc-menu > .icon{
   width: 20px;
 }
-.text-l{
+.rc-menu > .text-l{
   width: 80px;
   padding-left: 8px;
 }

@@ -20,51 +20,45 @@
       <div class="h-logo">
         <img src="./resource/img/logo.jpg" class="h-logo-img"/>
       </div>
-      <div class="h-menu-bar">
-        <div class="hm-file hm-botton">
-          File
+      <div class="h-menu-bar-flame">
+        <div class="h-menu-bar">
+          <div class="hm-file hm-botton">File</div>
+          <div class="hm-edit hm-botton">Edit</div>
         </div>
-        <div class="hm-edit hm-botton">
-          Edit
-        </div>
-      </div>
-      <div class="h-control-bar">
-        <div class="h-file h-botton">
-          <i class="fa fa-file fa-2x"></i>
-          <div class="h-file-text">
-            File
+        <div class="h-control-bar">
+          <div class="h-file h-botton">
+            <i class="fa fa-file fa-lg"></i>
+            <div class="h-text">File</div>
           </div>
-        </div>
-        <div class="h-settings h-botton">
-          <i class="fa fa-cog h-setting-icon fa-2x"></i>
-          <div class="h-setting-text">
-            Setting
+          <div class="h-settings h-botton">
+            <i class="fa fa-cog h-setting-icon fa-lg"></i>
+            <div class="h-text">Setting</div>
           </div>
-        </div>
-        <div class="h-zoom-pull">
-          <form>
-            <select class="h-zoom-pull-value">
-              <option value="100" selected>100%</option>
-              <option value="120">120%</option>
-              <option value="140">140%</option>
-              <option value="160">160%</option>
-              <option value="180">180%</option>
-              <option value="200">200%</option>
-              <option value="220">220%</option>
-              <option value="240">240%</option>
-            </select>
-          </form>
-        </div>
-        <div class="h-zoom">
-          <div class="h-zoom-p">
-            <i class="fa fa-search-plus fa-2x"></i>
+          <div class="h-zoom-pull">
+            <form>
+              <select class="h-zoom-pull-value">
+                <option value="100" selected>100%</option>
+                <option value="120">120%</option>
+                <option value="140">140%</option>
+                <option value="160">160%</option>
+                <option value="180">180%</option>
+                <option value="200">200%</option>
+                <option value="220">220%</option>
+                <option value="240">240%</option>
+              </select>
+            </form>
           </div>
-          <div class="h-zoom-m">
-            <i class="fa fa-search-minus fa-2x"></i>
+          <div class="h-zoom">
+            <div class="h-zoom-p">
+              <i class="fa fa-search-plus fa-lg"></i>
+            </div>
+            <div class="h-zoom-m">
+              <i class="fa fa-search-minus fa-lg"></i>
+            </div>
           </div>
-        </div>
-        <div class="h-delete-objects h-botton">
-          <i class="fa fa-trash-o fa-2x"></i>
+          <div class="h-delete-objects h-botton">
+            <i class="fa fa-trash-o fa-lg"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -99,64 +93,52 @@
   <!-- 右クリックメニュー -->
   <table class="right-click-menu">
     <tr class="rc-copy rc-menu">
-      <td class="icon">
-        <i class="fa fa-copy fa-lg rc-icon"></i>
-      </td>
-      <td class="text-l">
-        コピー
-      </td>
-      <td class="text-r">
-        Ctrl+C
-      </td>
+      <td class="icon"><i class="fa fa-copy fa-lg rc-icon"></i></td>
+      <td class="text-l">コピー</td>
+      <td class="text-r">Ctrl+C</td>
     </tr>
     <tr class="rc-paste rc-menu">
-      <td class="icon">
-        <i class="fa fa-paste fa-lg rc-icon"></i>
-      </td>
-      <td class="text-l">
-        ペースト
-      </td>
-      <td class="text-r">
-        Ctrl+V
-      </td>
+      <td class="icon"><i class="fa fa-paste fa-lg rc-icon"></i></td>
+      <td class="text-l">ペースト</td>
+      <td class="text-r">Ctrl+V</td>
     </tr>
     <tr class="rc-delete rc-menu">
-      <td class="icon">
-        <i class="fa fa-trash-o fa-lg rc-icon"></i>
-      </td>
-      <td class="text-l">
-        削除
-      </td>
-      <td class="text-r">
-        Delete
-      </td>
+      <td class="icon"><i class="fa fa-trash-o fa-lg rc-icon"></i></td>
+      <td class="text-l">削除</td>
+      <td class="text-r">Delete</td>
     </tr>
     <tr class="rc-group rc-menu">
-      <td class="icon">
-        <i class="fa fa-object-group fa-lg rc-icon"></i>
-      </td>
-      <td class="text-l">
-        グループ化
-      </td>
-      <td class="text-r">
-        Ctrl+G
-      </td>
+      <td class="icon"><i class="fa fa-object-group fa-lg rc-icon"></i></td>
+      <td class="text-l">グループ化</td>
+      <td class="text-r">Ctrl+G</td>
     </tr>
   </table>
 
-
-<!-- ポップアップメニュー -->
-<div class="drop-menu d-file-menu">
-  <div class="d-line">
-    <i class="d-icon fa fa-file-o fa-lg"></i>
-    <div class="d-text-l">
-      新規ファイル
+  <!--ドロップメニュー -->
+  <div class="drop-menu d-file-menu">
+    <div class="line">
+      <div class="text-l">新規ファイル</div>
+      <div class="text-r">Ctrl+N</div>
     </div>
-    <div class="d-text-r">
-      Ctrl+N
+    <div class="line">
+      <div class="text-l">開く</div>
+      <div class="text-r"></div>
+    </div>
+    <div class="line">
+      <div class="text-l d-to-img">上書き保存</div>
+      <div class="text-r">Ctrl+S</div>
+    </div>
+    <div class="line">
+      <div class="text-l">名前を付けて保存</div>
+      <div class="text-r">Ctrl+Shift+S</div>
+    </div>
+    <div class="line">
+      <div class="text-l">印刷</div>
+      <div class="text-r">Ctrl+P</div>
     </div>
   </div>
-</div>
+
+
 
 <!-- SCRIPTS -->
 <script src="./resource/jquery-2.2.4.min.js"></script>
