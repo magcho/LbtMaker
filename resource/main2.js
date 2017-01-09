@@ -1,5 +1,5 @@
 window.onload = function() {
-  listener = new window.keypress.Listener(); //keypressの読み込み
+  keyListener = new window.keypress.Listener(); //keypressの読み込み
   nowState = 'cursor';
   /*
   nowState: cursor    カーソルモード（デフォルト)
@@ -11,7 +11,7 @@ window.onload = function() {
   */
   ctrlState = false;
   // https://dmauro.github.io/Keypress/
-  var my_combos = listener.register_many([
+  var shortCutZomm = keyListener.register_many([
     {
       "keys": "meta",
       "on_keydown": function() {
@@ -19,7 +19,7 @@ window.onload = function() {
       },
       "on_keyup": function() {
         ctrlState = false;
-      },
+      }
     },
     {
       "keys": "shift",
@@ -162,6 +162,20 @@ function startProgram() {
       });
     });
   });
+  $('.par').on("click",function() {
+    //http://www.independent-software.com/loading-an-svg-image-with-fabric-js/
+    canvas.observe('mouse:down', function(e) {
+      var mouse_pos = canvas.getPointer(e.e);
+      fabric.loadSVGFromURL('./resource/svg/par.svg', function(objects, options) {
+        var svgObject = fabric.util.groupSVGElements(objects, options);
+        svgObject.top = mouse_pos.y;
+        svgObject.left = mouse_pos.x;
+        canvas.add(svgObject);
+        canvas.renderAll();
+        canvas.off('mouse:down');
+      });
+    });
+  });
   $('.moving').on("click",function() {
     //http://www.independent-software.com/loading-an-svg-image-with-fabric-js/
     canvas.observe('mouse:down', function(e) {
@@ -230,30 +244,32 @@ function startProgram() {
   /*右クリックメニュー*/
   $('canvas').bind('contextmenu', function(e) {
     displayRightMenu('show', e); //右クリックメニューの表示
-    canvas.observe('mouse:down', function() {
-      displayRightMenu('hide'); //右クリックメニューを隠す
-      canvas.off('mouse:down');
+    rc_mouse_pos_canvas = canvas.getPointer(e.e);
+    console.log(e);
+    $(document).on('click',function(){ //右クリックメニューの非表示
+      displayRightMenu('hide');
+      $(document).off('click');
     });
     return false
   });
 
   function displayRightMenu(mode, e) {
     if (mode == 'show') {
-      var rc_mouse_pos = {
+      var rc_mouse_pos_window = { //ウィンドウからの絶対座標
         x: e.clientX,
         y: e.clientY
       };
       $('.right-click-menu').css({
         'display': 'block',
-        'left': rc_mouse_pos.x,
-        'top': rc_mouse_pos.y
+        'left': rc_mouse_pos_window.x,
+        'top': rc_mouse_pos_window.y
       });
     } else if (mode == 'hide') {
       $('.right-click-menu').css('display', 'none');
     }
   }
   //コピー
-  $('.rc-copy').on("click",function() {
+  function copyActiveObject() {
     // http://stackoverflow.com/questions/37192881/fabricjs-clipboard-implementation-copy-paste
     // Single Object
     if (canvas.getActiveObject()) {
@@ -273,25 +289,29 @@ function startProgram() {
         clipboard = clone;
       });
     }
-    displayRightMenu('hide');
-  });
+  };
   //ペースト
-  $('.rc-paste').on("click",function(e) {
+  function pasteActiveObject(mouse_pos) {
     // http://stackoverflow.com/questions/37192881/fabricjs-clipboard-implementation-copy-paste
     // Do we have an object in our clipboard?
     if (clipboard) {
       // Lets see if we need to clone async
-      if (!fabric.util.getKlass(clipboard.type).async) {
-        var obj = clipboard.clone();
-        obj.setTop(obj.top += 10);
-        obj.setLeft(obj.left += 10);
-        canvas.add(obj);
+      if (clipboard.get('type') == 'path-group'){ //http://stackoverflow.com/questions/18893468/identify-type-of-selected-object-in-fabricjs
+                                                  // OBJ.get('type')でクリップボード上のオブジェクトが１つの場合か、複数の灯体の場合か判断
+                                                  //OBJ.type('type')がpath-groupなら灯体1つ、groupなら複数の灯体
+        if (mouse_pos){ //右クリックからペーストを呼び出した場合、カーソルいちにペースト
+          clipboard.setTop(mouse_pos.y);
+          clipboard.setLeft(mouse_pos.x);
+        }else{  //キーショートカットから呼び出した場合、コピー元の10*10右下にペースト
+          clipboard.setTop(clipboard.getTop() + 10);
+          clipboard.setLeft(clipboard.getLeft() + 10);
+        }
+        canvas.add(clipboard);
+        canvas.deactivateAll();
         // We do not need to clone async, all groups require async clone
-        canvas.setActiveObject(obj);
-        clipboard = obj;
-      } else {
+        canvas.setActiveObject(clipboard);
+      }else if (clipboard.get('type') == 'group') {
         clipboard.clone(function(clone) {
-          var mouse_pos = canvas.getPointer(e.e)
           clone.setTop(mouse_pos.y);
           clone.setLeft(mouse_pos.x);
 
@@ -307,11 +327,20 @@ function startProgram() {
           } else {
             canvas.setActiveObject(clone);
           }
-          clipboard = clone;
         });
       }
     }
     canvas.renderAll();
+  };
+
+  //コピー
+  $('.rc-copy').on("click",function(){
+    copyActiveObject();
+    displayRightMenu('hide');
+  });
+  //ペースト
+  $('.rc-paste').on("click",function(){
+    pasteActiveObject(rc_mouse_pos_canvas);
     displayRightMenu('hide');
   });
   //削除
@@ -325,6 +354,22 @@ function startProgram() {
   });
 
 
+ /* キーショートカット */
+  //コピー
+  var KeyShortCuts = keyListener.register_many([
+    {
+      "keys": "meta c",
+      "on_keydown": function(){
+        copyActiveObject();
+      }
+    },
+    {
+      "keys": "meta v",
+      "on_keydown": function(e){
+        pasteActiveObject();
+      }
+    }
+  ]);
 
  /* メニューバー */
  $('.drop-menu').hover('',function(){  //http://semooh.jp/jquery/api/events/hover/over,+out/
@@ -335,17 +380,25 @@ function startProgram() {
  });
 
   //file
-  $('.hm-file').hover(function(){
+  $('.hm-file').on('click',function(){
     $('.drop-menu').css('display','none');
     $('.d-file-menu').css('display','block');
   });
-  $('.hm-edit').hover(function(){
+  $('.hm-edit').on('click',function(){
     $('.drop-menu').css('display','none');
   });
 
-  $('.d-to-img').on('click',function(){
+  $('.d-overWrite').on('click',function(){
+    var viewInfomation = { //今のcanvasのズームの情報を取得
+      center:canvas.getVpCenter(),
+      zoom:canvas.getZoom(),
+    };
     var toURI = canvas.toDataURL({
       format: 'png',
+      multiplier: 1, //出力後のファイルの解像度の倍率
     });
+    canvas.absolutePan = viewInfomation.center;
+    canvas.setZoom = viewInfomation.zoom;
+    window.open(toURI);
   });
 }; //startProgramの閉じ

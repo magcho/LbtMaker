@@ -38,7 +38,7 @@ body{
 /* ドロップメニュー */
 .drop-menu{
   box-sizing: border-box;
-  position: fixed;
+  position: absolute;
   z-index: 2;
   top:30px;
   left:120px;
@@ -130,7 +130,7 @@ i.h-setting-icon{
   float: left;
   width: 200px;
 }
-.s-light-parts-title{
+.s-title{
   box-sizing: border-box;
   height: 30px;
   width: 200px;
@@ -140,25 +140,25 @@ i.h-setting-icon{
   margin-top: 15px;
   padding-left: 5px;
 }
-.s-light-parts-title-icon{
+.s-title .icon{
   float: left;
   padding-left: 5px;
 }
-.s-light-parts-title-text{
+.s-title .text{
   float: left;
   padding-left: 10px;
 }
 .s-light-parts-title:hover{
   background-color: #c5c5c5;
 }
-.s-light-parts-contents{
+.s-contents-area{
   width: 200px;
   height: 210px;
   box-sizing: border-box;
   padding: 4px;
   background-color: #e5e5e5;
 }
-.toutai{
+.s-contents-area .contents{
   box-sizing: border-box;
   float:left;
   height: 64px;
@@ -168,45 +168,54 @@ i.h-setting-icon{
   border: solid 1px #e5e5e5;
   border-radius: 3px;
 }
-.toutai:hover{
+.s-contents-area .contents:hover{
   background-color: #c5c5c5;
   border: solid #000 1px;
 }
-  /* 灯体 */
-  .totu{
-    background-image: url("./img/totu.png");
-    background-size: contain;
-  }
-  .totu500{
-    background-image: url("./img/totu500.png");
-    background-size: contain;
-  }
-  .fure{
-    background-image: url("./img/fure.png");
-    background-size: contain;
-  }
-  .fure500{
-    background-image: url("./img/fure500.png");
-    background-size: contain;
-  }
-  .par{
-    background-image: url("./img/par.png");
-    background-size: contain;
-  }
-  .moving{
-    background-image: url("./img/moving.png");
-    background-size: contain;
-  }
-  .strobo{
-    background-image: url("./img/strobo.png");
-    background-size: contain;
-  }
-  .source4{
-    background-image: url("./img/source4.png");
+  .contents{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
+  /* 灯体 */
+  .totu{
+    background-image: url("./img/totu.png");
+  }
+  .totu500{
+    background-image: url("./img/totu500.png");
+  }
+  .fure{
+    background-image: url("./img/fure.png");
+  }
+  .fure500{
+    background-image: url("./img/fure500.png");
+  }
+  .par{
+    background-image: url("./img/par.png");
+  }
+  .moving{
+    background-image: url("./img/moving.png");
+  }
+  .strobo{
+    background-image: url("./img/strobo.png");
+  }
+  .source4{
+    background-image: url("./img/source4.png");
+  }
+  /* スタンド */
+  .stand{
+    background-image: url("./img/stand.png");
+  }
+  .tonbo{
+    background-image: url("./img/tonbo.png");
+  }
+  .obeta{
+    background-image: url("./img/obeta.png");
+  }
+  .tras{
+    background-image: url("./img/tras.png");
+  }
+
 /* メインフィールド */
 .canvas-area{
   float:left;
@@ -227,29 +236,33 @@ canvas.lower-canvas{
 /* 右クリックメニュー */
 .right-click-menu{
   display: none;
-
   position: fixed;
   background: #fff;
 }
-.right-click-menu > td{
-  border: 0px  solid;
+.right-click-menu .line{
   margin: 0px;
-}
-.rc-menu{
   width: 240px;
   height: 30px;
   background: #FFF;
   margin-left: 8px;
 }
-.rc-menu > .icon{
-  width: 20px;
+.right-click-menu .line:hover{
+  background-color: #e5e5e5;
 }
-.rc-menu > .text-l{
+.right-click-menu .line .icon{
+  display: block;
+  box-sizing: border-box;
+  width: 20px;
+  float: left;
+}
+.right-click-menu .line .text-l{
   width: 80px;
   padding-left: 8px;
+  float: left;
 }
-tr > td:hover{
-  background-color: #e5e5e5;
+.right-click-menu .line .text-r{
+  box-sizing: border-box;
+  float: left;
 }
 /* プリロード画像 */
 .preLoad-img{
