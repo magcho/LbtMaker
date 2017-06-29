@@ -1,5 +1,225 @@
 /*LBT Planner Style CSS*/
 
+body{
+  z-index: 0;
+  margin: 0px;
+}
+/*ヘッダーバー関連*/
+.header-bar{
+  height: 60px;
+  width: 100%;
+}
+.h-logo{
+  box-sizing: border-box;
+  height: 60px;
+  width: 60px;
+  margin-right: 60px;
+  float: left;
+}
+.h-menu-bar-flame{
+  box-sizing: border-box;
+  float: left;
+  width: auto;
+  height: 60px;
+}
+/* メニューバー */
+.h-menu-bar{
+  box-sizing: border-box;
+  height: 30px;
+}
+.hm-botton{
+  box-sizing: border-box;
+  height: 30px;
+  padding: 3px;
+  width: auto;
+  border: solid 1px #000;
+  float: left;
+}
+/* ドロップメニュー */
+.drop-menu{
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 2;
+  top:30px;
+  left:120px;
+  height: auto;
+  width: 240px;
+  background: #FFF;
+  border:solid 1px #000;
+  display: none;
+}
+.drop-menu > .line:hover{
+  background: #c5c5c5;
+}
+.drop-menu > .line{
+  box-sizing: border-box;
+  z-index: 2;
+  height: 33px;
+}
+.drop-menu .text-l{
+  box-sizing: border-box;
+  z-index: 2;
+  float: left;
+  line-height: 33px;  /*http://bashalog.c-brains.jp/11/10/13-200523.php*/
+  margin-left: 5px;
+}
+.drop-menu .text-r{
+  box-sizing: border-box;
+  z-index: 2;
+  float: right;
+  text-align: right;
+  line-height: 33px;
+  margin-right: 5px;
+}
+ /* file メニュー */
+
+ /* コントロールバー */
+.h-control-bar{
+  box-sizing: border-box;
+  height: 30px;
+}
+.h-logo-img{
+  width: 100%;
+  height: 100%;
+}
+.h-botton{
+  box-sizing: border-box;
+  height: 30px;
+  width: auto;
+  border: solid 1px #000;
+  display: block;
+  float: left;
+}
+.h-text{
+  box-sizing: border-box;
+  float: left;
+  height: auto;
+  width: auto;
+
+}
+i.h-setting-icon{
+  size:10px;
+}
+.h-zoom-pull{
+  display: block;
+  float: left;
+}
+.h-zoom{
+  box-sizing: border-box;
+  height: 60px;
+  width: 60px;
+  float: left;
+}
+.h-zoom-p,.h-zoom-m{
+  box-sizing: border-box;
+  height: 30px;
+  width: 30px;
+  float: left;
+  text-align: center;
+  border: solid 1px #000;
+  float: left;
+}
+.h-delete-objects{
+  float: left;
+  border: solid 1px #000;
+}
+
+/* サイドメニュー関連 */
+.side-contents{
+  box-sizing: border-box;
+  float: left;
+  width: 200px;
+}
+.s-title{
+  box-sizing: border-box;
+  height: 30px;
+  width: 200px;
+  background-color: #e8e8e8;
+  border-top: #e5e5e5 solid 1px;
+  border-bottom: #e5e5e5 solid 1px;
+  margin-top: 15px;
+  padding-left: 5px;
+}
+.s-title .icon{
+  float: left;
+  padding-left: 5px;
+}
+.s-title .text{
+  float: left;
+  padding-left: 10px;
+}
+.s-light-parts-title:hover{
+  background-color: #c5c5c5;
+}
+.s-contents-area{
+  width: 200px;
+  height: 210px;
+  box-sizing: border-box;
+  padding: 4px;
+  background-color: #e5e5e5;
+}
+.s-contents-area .contents{
+  box-sizing: border-box;
+  float:left;
+  height: 64px;
+  width: 64px;
+  text-align: center;
+  background-color: #e5e5e5;
+  border: solid 1px #e5e5e5;
+  border-radius: 3px;
+}
+.s-contents-area .contents:hover{
+  background-color: #c5c5c5;
+  border: solid #000 1px;
+}
+  .contents{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  /* 灯体 */
+  .totu{
+    background-image: url("./img/totu.png");
+  }
+  .totu500{
+    background-image: url("./img/totu500.png");
+  }
+  .fure{
+    background-image: url("./img/fure.png");
+  }
+  .fure500{
+    background-image: url("./img/fure500.png");
+  }
+  .par{
+    background-image: url("./img/par.png");
+  }
+  .moving{
+    background-image: url("./img/moving.png");
+  }
+  .strobo{
+    background-image: url("./img/strobo.png");
+  }
+  .source4{
+    background-image: url("./img/source4.png");
+  }
+  /* スタンド */
+  .stand{
+    background-image: url("./img/stand.png");
+  }
+  .tonbo{
+    background-image: url("./img/tonbo.png");
+  }
+  .obeta{
+    background-image: url("./img/obeta.png");
+  }
+  .tras{
+    background-image: url("./img/tras.png");
+  }
+
+/* メインフィールド */
+.canvas-area{
+  float:left;
+}
 div.canvas-container {
   box-sizing: border-box;
   width: 847px;
@@ -9,148 +229,42 @@ div.canvas-container {
 canvas{
   border: solid 3px #000;
 }
-
-#control{
-  box-sizing: border-box;
-  float:left;
-  width: 212px;
-  height: 595px;
-  /*border: solid 3px #000;*/
-}
-.toutai{
-  box-sizing: border-box;
-  float:left;
-  height: 100px;
-  width: 100px;
-  border: solid 3px #000;
-  text-align: center;
-  background-color: rgb(106, 138, 78);
-}
-.toutai:hover{
-  background-color: rgb(99, 10, 252);
+canvas.lower-canvas{
+  background:rgb(182, 182, 182);
 }
 
-.canvas-area{
-  float:left;
-}
-
-#settings{
-  box-sizing: border-box;
-  /*float:left;*/
-  width: 212px;
-  height: 595px;
-}
-
-#menu{
-  box-sizing: border-box;
-  /*float:left;*/
-  width: 212px;
-  height: 56px;
-}
-.menu-botton{
-  float:left;
-  width: 100px;
-  height: 50px;
-  border: solid 3px #000;
-  text-align: center;
-  background-color: rgb(46, 193, 94);
-}
-.menu-botton:hover{
-  background-color: rgb(17, 73, 29);
-}
-.side-contents{
-  float: left;
-}
-.settings-botton{
-  float:left;
-  width: 100px;
-  height:100px;
-  border: solid 3px #000;
-  text-align: center;
-  background-color: rgb(46, 144, 193);
-}
-
-/*ヘッダーバー関連*/
-.header-bar{
-  height: 60px;
-  width: 100%
-}
-.h-logo{
-  box-sizing: border-box;
-  height: 60px;
-  width: 60px;
-  margin-right: 60px;
-  border: solid 2px #000;
-  float: left;
-}
-.h-logo-img{
-  width: 100%;
-  height: 100%;
-}
-.h-botton{
-  box-sizing: border-box;
-  height: 60px;
-  width: 60px;
-  border: solid 2px #000;
-  display: block;
-  float: left;
-}
-.h-zoom-pull-value{
-  display: block;
-  float: left;
-  margin-top:20px;
-}
-.h-zoom{
-  box-sizing: border-box;
-  height: 60px;
-  width: 100px;
-  float: left;
-}
-.h-zoom-blank{
-  box-sizing: border-box;
-  height: 30px;
-}
-.h-zoom-p,.h-zoom-m{
-  box-sizing: border-box;
-  height: 30px;
-  width: 30px;
-  float: left;
-  text-align: center;
-  border: solid 2px #000;
-}
-/*ポップアップ関連*/
-.background-popup{
-  position: absolute;
-  top: 50px;
-  left: 300px;
-
-  height: 500px;
-  width: 800px;
-  background-color: rgb(209, 128, 9);
+/* 右クリックメニュー */
+.right-click-menu{
   display: none;
-  opacity: 1;
+  position: fixed;
+  background: #fff;
 }
-
-.background-bottom{
+.right-click-menu .line{
+  margin: 0px;
+  width: 240px;
+  height: 30px;
+  background: #FFF;
+  margin-left: 8px;
+}
+.right-click-menu .line:hover{
+  background-color: #e5e5e5;
+}
+.right-click-menu .line .icon{
+  display: block;
   box-sizing: border-box;
-  display: block;
-  float:left;
-  width:350px;
-  height:100px;
-
-  margin:30px 25px;
-
-  border: solid 3px #000;
-  text-align: center;
-  background-color: rgb(106, 46, 193);
-}
-
-.background-close-botton{
-  display: block;
+  width: 20px;
   float: left;
-  padding-left: 720px;
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  font-size:5em;
+}
+.right-click-menu .line .text-l{
+  width: 80px;
+  padding-left: 8px;
+  float: left;
+}
+.right-click-menu .line .text-r{
+  box-sizing: border-box;
+  float: left;
+}
+/* プリロード画像 */
+.preLoad-img{
+  display: none;
 }

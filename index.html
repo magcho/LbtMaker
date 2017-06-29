@@ -10,98 +10,153 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   <link href="./resource/style.css" rel="stylesheet" type="text/css">
+  <!-- iconfont -->
+  <link rel="stylesheet" href="./resource/font/font-awesome-4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
-  <div>
+  <!-- ヘッダーメニュー -->
     <div class="header-bar">
       <div class="h-logo">
-        <img src="./resource/logo.jpg" class="h-logo-img"/>
+        <img src="./resource/img/logo.jpg" class="h-logo-img"/>
       </div>
-      <div class="h-file h-botton">
-        Files
-      </div>
-      <div class="h-settings h-botton">
-        Settings
-      </div>
-      <div class="h-zoom-pull">
-        <form>
-          <select class="h-zoom-pull-value">
-            <option value="10">10%</option>
-            <option value="20">20%</option>
-            <option value="30">30%</option>
-            <option value="40">40%</option>
-            <option value="50">50%</option>
-            <option value="60">60%</option>
-            <option value="70">70%</option>
-            <option value="80">80%</option>
-            <option value="90">90%</option>
-            <option value="100" selected>100%</option>
-            <option value="110">110%</option>
-            <option value="120">120%</option>
-            <option value="130">130%</option>
-            <option value="140">140%</option>
-            <option value="150">150%</option>
-            <option value="160">160%</option>
-            <option value="170">170%</option>
-            <option value="180">180%</option>
-            <option value="190">190%</option>
-          </select>
-        </form>
-      </div>
-      <div class="h-zoom">
-        <div class="h-zoom-blank">
-          zoom
+      <div class="h-menu-bar-flame">
+        <div class="h-menu-bar">
+          <div class="hm-file hm-botton">File</div>
+          <div class="hm-edit hm-botton">Edit</div>
         </div>
-        <div class="h-zoom-p">
-          +
-        </div>
-        <div class="h-zoom-m">
-          -
+        <div class="h-control-bar">
+          <div class="h-file h-botton">
+            <i class="fa fa-file fa-lg"></i>
+            <div class="h-text">File</div>
+          </div>
+          <div class="h-settings h-botton">
+            <i class="fa fa-cog h-setting-icon fa-lg"></i>
+            <div class="h-text">Setting</div>
+          </div>
+          <div class="h-zoom-pull">
+            <form>
+              <select class="h-zoom-pull-value">
+                <option value="100" selected>100%</option>
+                <option value="120">120%</option>
+                <option value="140">140%</option>
+                <option value="160">160%</option>
+                <option value="180">180%</option>
+                <option value="200">200%</option>
+                <option value="220">220%</option>
+                <option value="240">240%</option>
+              </select>
+            </form>
+          </div>
+          <div class="h-zoom">
+            <div class="h-zoom-p">
+              <i class="fa fa-search-plus fa-lg"></i>
+            </div>
+            <div class="h-zoom-m">
+              <i class="fa fa-search-minus fa-lg"></i>
+            </div>
+          </div>
+          <div class="h-delete-objects h-botton">
+            <i class="fa fa-trash-o fa-lg"></i>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+
+
+  <!-- サイドメニュー -->
   <div class="side-contents">
-    <div id="menu">
-      <div class="setting-menu menu-botton" >Settings</div>
-      <div class="ligting-menu menu-botton" >Lighting</div>
+    <div class="s-light-parts-title s-title">
+      <i class="s-light-parts-title-icon fa fa-caret-down fa-lg icon"></i>
+      <div class="s-light-parts-title-text text">灯体</div>
     </div>
-    <div id="settings">
-      <div id="background-image-set" class="settings-botton" >背景バトンセット</div>
+    <div class="s-light-parts-contents s-contents-area">
+      <div class="totu contents" ></div>
+      <div class="totu500 contents" ></div>
+      <div class="fure contents" ></div>
+      <div class="fure500 contents"></div>
+      <div class="par contents"></div>
+      <div class="moving contents"></div>
+      <div class="strobo contents"></div>
+      <div class="source4 contents"></div>
     </div>
-    <div id="control">
-      <div id="light-parts">
-        <div id="cursor" class="toutai" >カーソル</div>
-        <div id="totu" class="toutai" >凸 1000w</div>
-        <div id="totu500" class="toutai" >凸 500w</div>
-        <div id="fure" class="toutai" >フレネル 1000W</div>
-        <div id="fure500" class="toutai">フレネル 500w</div>
-        <div id="par" class="toutai">パー</div>
-        <div id="moving" class="toutai">ムービング</div>
-        <div id="strobo" class="toutai">ストロボ</div>
-        <div id="source" class="toutai">ソース４</div>
-      </div>
+    <div class="s-stand-title title">
+      <i class="s-light-parts-title-icon fa fa-caret-down fa-lg icon"></i>
+      <div class="s-stand-title-text text">スタンド各種</div>
+    </div>
+    <div class="s-stand-contents s-contents-area">
+      <div class="stand contents"></div>
+      <div class="tonbo contents"></div>
+      <div class="obeta contents"></div>
+      <div class="tras contents"></div>
+      <div class=" contents"></div>
     </div>
   </div>
+
+  <!-- メインフィールド -->
   <canvas id="main" class="canvas-area" width="847" height="595"></canvas>
+  <!-- <img src="./resource/img/plan-base.png" id="my-image" class="preLoad-img"> -->
+  <img src="./resource/svg/base-2.svg" id="my-image" class="preLoad-img">
 
 
-  <!-- ポップアップメニュー -->
-  <div class="background-popup">  <!-- 背景のサステンプレート選択 -->
-    <div class="background-close-botton" >×</div>
-    <div class="background-bottom" >LiSA  視聴覚</div>
-    <div class="background-bottom">LiSA  体育館</div>
+  <!-- 右クリックメニュー -->
+  <div class="right-click-menu">
+    <div class="rc-copy line">
+      <i class="fa fa-copy fa-lg icon"></i>
+      <div class="text-l">コピー</div>
+      <div class="text-r">Ctrl+C</div>
+    </div>
+    <div class="rc-paste line">
+      <i class="fa fa-trash-o fa-lg icon"></i>
+      <div class="text-l">貼り付け</div>
+      <div class="text-r">Ctrl+V</div>
+    </div>
+    <div class="rc-delete line">
+      <i class="fa fa-trash-o fa-lg icon"></i>
+      <div class="text-l">削除</div>
+      <div class="text-r">BackSpace</div>
+    </div>
+    <div class="rc-group line">
+      <i class="fa fa-object-group fa-lg icon"></i>
+      <div class="text-l">グループ化</div>
+      <div class="text-r">Ctrl+G</div>
+    </div>
   </div>
+
+  <!--ドロップメニュー -->
+  <div class="drop-menu d-file-menu">
+    <div class="line">
+      <div class="text-l">新規ファイル</div>
+      <div class="text-r">Ctrl+N</div>
+    </div>
+    <div class="line">
+      <div class="text-l">開く</div>
+      <div class="text-r"></div>
+    </div>
+    <div class="line">
+      <div class="text-l d-overWrite">上書き保存</div>
+      <div class="text-r">Ctrl+S</div>
+    </div>
+    <div class="line">
+      <div class="text-l">名前を付けて保存</div>
+      <div class="text-r">Ctrl+Shift+S</div>
+    </div>
+    <div class="line">
+      <div class="text-l">印刷</div>
+      <div class="text-r">Ctrl+P</div>
+    </div>
+  </div>
+
 
 
 <!-- SCRIPTS -->
+<script src="./resource/jquery-2.2.4.min.js"></script>
 <script src="./resource/fabric.js"></script>
+<script src="./resource/dmauro-Keypress-80c0f97/keypress.js"></script>
 <script src="./resource/main2.js"></script>
 <script src="./resource/background.js"></script>
 <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
-<script src="./resource/jquery-2.2.4.min.js"></script>
 <script>
   $('#settings').css('display','none');
 </script>
